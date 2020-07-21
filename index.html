@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <div class="calculator">
+            <input type="text" class="calculator-screen z-depth-1" :value="valScreen" disabled />
+
+            <div class="calculator-keys">
+
+                <button type="button" v-on:click.prevent = "addOperator('+')" class="btn btn-info">+</button>
+                <button type="button" v-on:click.prevent = "addOperator('-')" class="btn btn-info">-</button>
+                <button type="button" v-on:click.prevent = "addOperator('x')" class="btn btn-info" >&times;</button>
+                <button type="button" v-on:click.prevent = "addOperator('/')" class="btn btn-info">&divide;</button>
+          
+                <button type="button" v-on:click.prevent="screen('7')" class="btn btn-light">7</button>
+                <button type="button" v-on:click.prevent="screen('8')" class="btn btn-light">8</button>
+                <button type="button" v-on:click.prevent="screen('9')" class="btn btn-light">9</button>
+          
+          
+                <button type="button" v-on:click.prevent="screen('4')" class="btn btn-light">4</button>
+                <button type="button" v-on:click.prevent="screen('5')" class="btn btn-light">5</button>
+                <button type="button" v-on:click.prevent="screen('6')" class="btn btn-light">6</button>
+          
+          
+                <button type="button" v-on:click.prevent="screen('1')" class="btn btn-light">1</button>
+                <button type="button" v-on:click.prevent="screen('2')" class="btn btn-light">2</button>
+                <button type="button" v-on:click.prevent="screen('3')" class="btn btn-light">3</button>
+          
+          
+                <button type="button" v-on:click.prevent="screen('0')" class="btn btn-light">0</button>
+                <button type="button" v-on:click.prevent="screen('.')" class="decimal function btn btn-secondary">.</button>
+                <button type="button" v-on:click.prevent="remove" class="all-clear function btn btn-danger btn-sm">AC</button>
+          
+                <button type="button" @click.prevent = "counting" class="equal-sign operator btn btn-success">=</button>
+          
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
